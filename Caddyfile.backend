@@ -1,4 +1,4 @@
-http://localhost:8081 {
+*:80 {
     respond 200
     log
 }

@@ -2,8 +2,8 @@
     order cadmod before reverse_proxy
 }
 
-localhost:8080 {
+http://localhost {
     cadmod
-    reverse_proxy http://localhost:8081
+    reverse_proxy http://back:80
     log
 }
