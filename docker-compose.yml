@@ -13,3 +13,12 @@ services:
     volumes:
       - ./Caddyfile.backend:/etc/Caddyfile
     command: caddy run -config /etc/Caddyfile
+  certtest:
+    build:
+       context: ./
+    volumes:
+      - ./Caddyfile.test:/etc/Caddyfile
+      - ./issuing_ca.crt:/etc/issuing_ca.crt
+    command: caddy run -config /etc/Caddyfile
+    ports:
+      - 8080:443

@@ -1,0 +1,17 @@
+{
+    order cadmod last
+    log {
+        level DEBUG
+    }
+}
+
+localhost {
+    log
+    tls {
+        client_auth {
+            mode                 require_and_verify
+            trusted_ca_cert_file /etc/issuing_ca.crt
+        }
+    }
+    cadmod
+}
