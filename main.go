@@ -35,6 +35,7 @@ func (c CadMod) ServeHTTP(wr http.ResponseWriter, req *http.Request, h caddyhttp
 	if req.TLS != nil {
 		/*spew.Dump(req.TLS.PeerCertificates)*/
 		for _, cert := range req.TLS.PeerCertificates {
+			fmt.Println(cert.Subject.CommonName)
 			for _, dnsName := range cert.DNSNames {
 				fmt.Println("dns name: ", dnsName)
 			}
